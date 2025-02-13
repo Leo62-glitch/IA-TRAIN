@@ -1,0 +1,64 @@
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Créateur d'IA - Entraînement de Chatbot Personnel</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Créateur d'IA Conversationnelle</h1>
+    <div id="userInfo" class="user-info"></div>
+    
+    <div class="share-section">
+      <h2>Partager / Importer une IA</h2>
+      <div class="share-container">
+        <div class="share-code-display">
+          <label>Votre code de partage:</label>
+          <input type="text" id="shareCodeDisplay" readonly>
+          <button id="copyShareCode" class="button">Copier</button>
+          <button id="generateShareCode" class="button">Générer un code</button>
+        </div>
+        <div class="import-code">
+          <label>Importer une IA:</label>
+          <input type="text" id="importCode" placeholder="Entrez un code de partage">
+          <button id="importAI" class="button">Importer</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="training-section">
+      <h2>Configuration de l'IA</h2>
+      <input type="text" id="aiName" placeholder="Nom de votre IA" class="input-field">
+      <textarea id="aiPersonality" placeholder="Décrivez la personnalité de votre IA..." class="input-field"></textarea>
+    </div>
+
+    <div class="training-data">
+      <h2>Données d'entraînement</h2>
+      <div class="training-pair">
+        <input type="text" class="input" placeholder="Message utilisateur">
+        <input type="text" class="output" placeholder="Réponse souhaitée">
+        <button class="add-pair">+</button>
+      </div>
+      <button id="addNewPair" class="button">Ajouter une nouvelle paire</button>
+    </div>
+
+    <div class="button-group">
+      <button id="trainAI" class="button primary">Entraîner l'IA</button>
+      <button id="saveAI" class="button primary save">Sauvegarder l'IA</button>
+    </div>
+
+    <div class="chat-section">
+      <h2>Tester votre IA</h2>
+      <div id="chatbox"></div>
+      <div class="chat-input">
+        <input type="text" id="userInput" placeholder="Écrivez votre message...">
+        <button id="sendMessage" class="button">Envoyer</button>
+      </div>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@3.11.0/dist/tf.min.js"></script>
+  <script type="module" src="ia-creator.js"></script>
+</body>
+</html>
